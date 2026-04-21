@@ -114,5 +114,18 @@ export type Test = PractiTestEntity & {
   };
 };
 
-export type Requirement = PractiTestEntity;
-export type Run = PractiTestEntity;
+export type Requirement = PractiTestEntity & {
+  attributes: {
+    name: string;
+    version?: string;
+    priority?: string;
+  };
+};
+
+export type Run = PractiTestEntity & {
+  attributes: {
+    "instance-id": number;
+    "exit-code"?: number;
+    "run-duration"?: string;
+  };
+};
